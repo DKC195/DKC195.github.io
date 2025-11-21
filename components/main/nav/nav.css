@@ -14,14 +14,6 @@ nav>div#logo {
   font-size: 23px;
 }
 
-div#junk {
-  position: fixed;
-  width: 100vw;
-  height: 66px;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-}
-
 nav>div#content {
   display: flex;
   flex-flow: row;
