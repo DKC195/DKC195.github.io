@@ -1,12 +1,10 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { ComponentProps } from "react";
 import type { AudienceSlug } from "@/lib/types";
 
-type QueryLinkProps = {
+type QueryLinkProps = Omit<ComponentProps<typeof Link>, "href"> & {
   href: string;
   audience?: AudienceSlug;
-  className?: string;
-  children: ReactNode;
 };
 
 export function QueryLink({ href, audience, className, children, ...props }: QueryLinkProps) {
