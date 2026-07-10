@@ -35,10 +35,10 @@ export function ProjectsPageClient({ projects }: { projects: Project[] }) {
         <section style={{ marginTop: "1.5rem" }}>
           <div className="page-header">
             <div>
-              <p className="eyebrow">Other fields</p>
-              <h2 className="section-title">Other field programs and projects</h2>
+              <p className="eyebrow">More work</p>
+              <h2 className="section-title">Projects in other areas</h2>
               <p className="section-copy">
-                Work outside the current audience filter, included for broader context.
+                Work outside the selected focus area, included for broader context.
               </p>
             </div>
           </div>

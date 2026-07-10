@@ -981,7 +981,10 @@ select {
 }
 
 :root[data-theme="dark"] .settings-trigger {
-  background: rgba(0, 0, 0, 0.52);
+  background: rgba(255, 255, 255, 0.92);
+  color: #0a0a0a;
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.6);
 }
 
 .site-header,

@@ -25,9 +25,9 @@ export function ExperiencePageClient({ entries, projects }: ExperiencePageClient
       <div className="page-header">
         <div>
           <p className="eyebrow">Experience</p>
-          <h1 className="section-title">Work history across roles, operational responsibility, and technical delivery</h1>
+          <h1 className="section-title">Roles, responsibilities, and the work behind them</h1>
           <p className="section-copy">
-            A view of roles across student leadership, nonprofit operations, design work, and technical delivery.
+            Roles across student leadership, nonprofit operations, design, and technical delivery.
           </p>
         </div>
         <div className="view-toggle" aria-label="Experience view mode">
@@ -58,10 +58,10 @@ export function ExperiencePageClient({ entries, projects }: ExperiencePageClient
         <section style={{ marginTop: "1.5rem" }}>
           <div className="page-header">
             <div>
-              <p className="eyebrow">Other fields</p>
-              <h2 className="section-title">Other field experience</h2>
+              <p className="eyebrow">More experience</p>
+              <h2 className="section-title">Roles in other areas</h2>
               <p className="section-copy">
-                Roles outside the current audience filter, included for broader context.
+                Roles outside the selected focus area, included for broader context.
               </p>
             </div>
           </div>

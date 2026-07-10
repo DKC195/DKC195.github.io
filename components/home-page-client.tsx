@@ -54,7 +54,7 @@ export function HomePageClient({
               Explore projects
             </QueryLink>
             <QueryLink href="/experience" audience={audience} className="button-ghost">
-              View work history
+              View experience
             </QueryLink>
           </div>
         </div>
@@ -98,7 +98,7 @@ export function HomePageClient({
               <p className="section-copy">{profile.currentStory}</p>
             </article>
             <article className="card">
-              <p className="eyebrow">Portfolio focus</p>
+              <p className="eyebrow">Focus areas</p>
               <div className="stack">
                 {home.data.highlights.map((highlight) => (
                   <span key={highlight}>{highlight}</span>
@@ -112,10 +112,10 @@ export function HomePageClient({
       <section className="panel section">
         <div className="page-header">
           <div>
-            <p className="eyebrow">Featured projects</p>
+            <p className="eyebrow">Projects</p>
             <h2 className="section-title">Selected projects</h2>
             <p className="section-copy">
-              A selection of projects that reflects the current focus while still representing the broader range of work.
+              A few projects that show what I focus on now, with a sense of the wider range of work behind them.
             </p>
           </div>
           <QueryLink href="/projects" audience={audience} className="button-ghost">
@@ -133,11 +133,11 @@ export function HomePageClient({
       <section className="panel section">
         <div className="page-header">
           <div>
-            <p className="eyebrow">Experience snapshot</p>
-            <h2 className="section-title">Recent roles and responsibility arcs</h2>
+            <p className="eyebrow">Experience</p>
+            <h2 className="section-title">Recent roles</h2>
           </div>
           <QueryLink href="/experience" audience={audience} className="button-ghost">
-            Open full work history
+            View full experience
           </QueryLink>
         </div>
 
