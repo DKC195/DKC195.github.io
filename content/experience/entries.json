@@ -1,0 +1,437 @@
+[
+  {
+    "id": "yan-digital-systems-officer",
+    "title": "Digital Systems Officer",
+    "organization": "Youth Activism Nepal",
+    "kind": "work",
+    "location": "Nepal",
+    "start": "2025-01",
+    "end": null,
+    "audiences": ["engineering", "leadership", "design"],
+    "tags": ["nextjs", "fastapi", "mongodb", "cloudflare", "seo", "devops"],
+    "featured": true,
+    "summary": "Build and maintain the organization's web platform while managing supporting infrastructure and search visibility.",
+    "highlights": [
+      "Design, develop, and maintain the custom web platform using Next.js, FastAPI, and MongoDB.",
+      "Manage hosting, domain administration, Cloudflare DNS, SSL certificates, and production deployments.",
+      "Implement GitHub-based CI/CD workflows and ongoing technical SEO support."
+    ],
+    "relatedProjectSlugs": ["youth-activism-nepal-platform"]
+  },
+  {
+    "id": "liberty-international-research-intern",
+    "title": "Research Intern",
+    "organization": "Liberty International",
+    "kind": "work",
+    "location": "Kathmandu, Bāgmatī, Nepal",
+    "start": "2025-07",
+    "end": "2025-12",
+    "audiences": ["research", "leadership"],
+    "tags": ["research", "policy", "analysis", "index"],
+    "featured": true,
+    "summary": "Supported analysis and synthesis work for the Digital Nomad Index by compiling and interpreting cross-country policy indicators.",
+    "highlights": [
+      "Supported research and data analysis tied to visa policy and mobility indicators.",
+      "Compiled comparative policy information and assisted with research outputs.",
+      "Participated in debates and discussions around the index and related topics."
+    ],
+    "relatedProjectSlugs": ["agrineer-volume-7-layout-design"]
+  },
+  {
+    "id": "students-for-liberty-na-social-media-intern",
+    "title": "Social Media Intern",
+    "organization": "Students For Liberty",
+    "kind": "work",
+    "location": "North America",
+    "start": "2025-05",
+    "end": null,
+    "audiences": ["design", "leadership"],
+    "tags": ["social-media", "visual-design", "branding"],
+    "featured": false,
+    "summary": "Create branded campaign assets and support visually consistent digital communication across North American channels.",
+    "highlights": [
+      "Designed thumbnails, carousels, and campaign visuals for social platforms.",
+      "Used Canva and Affinity to maintain consistent branding across campaign assets.",
+      "Supported website design and stronger user-focused digital communication."
+    ],
+    "relatedProjectSlugs": ["agrineer-volume-7-layout-design"]
+  },
+  {
+    "id": "fusemachines-ai-fellowship",
+    "title": "AI Fellow",
+    "organization": "Fusemachines",
+    "kind": "fellowship",
+    "location": "Nepal",
+    "start": "2025-04",
+    "end": "2025-12",
+    "audiences": ["engineering", "research"],
+    "tags": ["machine-learning", "pytorch", "fastapi", "ffmpeg"],
+    "featured": true,
+    "summary": "Completed an applied AI fellowship and built a multimodal capstone for extracting structured soccer match highlights.",
+    "highlights": [
+      "Worked across data processing, model training, evaluation, and system integration.",
+      "Covered machine learning, deep learning, CNNs, NLP, time series, and LLM-related coursework.",
+      "Built a capstone pipeline for event extraction and highlight generation from full-length match videos."
+    ],
+    "relatedProjectSlugs": ["soccer-match-highlights-event-extraction"]
+  },
+  {
+    "id": "icrtai-visual-design-av",
+    "title": "Visual Design and AV Production Specialist",
+    "organization": "ICRTAI",
+    "kind": "work",
+    "location": "Nepal",
+    "start": "2025-04",
+    "end": null,
+    "audiences": ["design", "leadership"],
+    "tags": ["event-production", "visual-design", "obs", "branding"],
+    "featured": true,
+    "summary": "Led visual content design and live AV execution for a conference environment that required real-time technical coordination.",
+    "highlights": [
+      "Designed stage visuals and branding materials using Canva and Figma.",
+      "Operated OBS Studio for live screen content and coordinated real-time visual updates.",
+      "Managed printed event materials and aligned live content with speaker timing."
+    ],
+    "relatedProjectSlugs": ["icrtai-2025-conference-visual-av"]
+  },
+  {
+    "id": "naess-layout-graphic-designer-2026",
+    "title": "Layout Editor and Graphic Designer",
+    "organization": "National Agricultural Engineering Students' Society",
+    "kind": "work",
+    "location": "Dharan, Nepal",
+    "start": "2026-04",
+    "end": "2026-06",
+    "audiences": ["design"],
+    "tags": ["layout", "publication", "editorial-design"],
+    "featured": false,
+    "summary": "Designed layouts for the 8th volume of Agrineer with a focus on print readability and visual cohesion.",
+    "highlights": [
+      "Designed layouts for the 8th volume of Agrineer.",
+      "Balanced text and image composition for print presentation.",
+      "Collaborated with stakeholders to improve readability and visual quality."
+    ],
+    "relatedProjectSlugs": ["agrineer-layout-design"]
+  },
+  {
+    "id": "students-for-liberty-regional-coordinator",
+    "title": "Regional Coordinator - Creative Operations",
+    "organization": "Students For Liberty",
+    "kind": "volunteer",
+    "location": "South Asia",
+    "start": "2024-05",
+    "end": null,
+    "audiences": ["leadership", "design"],
+    "tags": ["creative-operations", "social-media", "training", "coordination"],
+    "featured": true,
+    "summary": "Lead creative operations across South Asia with a focus on social media systems, template standardization, and coordinator training.",
+    "highlights": [
+      "Designed standardized social media templates and internal resources to improve outreach efficiency.",
+      "Led the team managing South Asia Students For Liberty social media platforms.",
+      "Organized coordinator retreats and delivered training on brand guidelines."
+    ],
+    "relatedProjectSlugs": ["datacamp-campus-access-program"]
+  },
+  {
+    "id": "cs50x-nepal-planning-head",
+    "title": "Planning Head",
+    "organization": "CS50x Nepal",
+    "kind": "club",
+    "location": "Dharan, Kosi Zone, Nepal",
+    "start": "2024-05",
+    "end": "2025-04",
+    "audiences": ["leadership", "engineering"],
+    "tags": ["program-management", "teaching", "hackathon", "operations"],
+    "featured": true,
+    "summary": "Planned and executed a large-scale learning program while coordinating workshops, hackathons, and public showcases.",
+    "highlights": [
+      "Developed project plans, timelines, and resource allocation strategies for the program.",
+      "Organized a hackathon with more than 100 participants and over 20 teams.",
+      "Coordinated a closing ceremony attended by more than 2,000 visitors."
+    ],
+    "relatedProjectSlugs": ["cs50x-nepal-program-delivery", "x-hack-3-ai-hackathon"]
+  },
+  {
+    "id": "ecsess-data-science-fellowship-admin",
+    "title": "Data Science Fellowship Admin",
+    "organization": "Electronics And Communication Engineering Student Society",
+    "kind": "club",
+    "location": "Dharan",
+    "start": "2024-09",
+    "end": null,
+    "audiences": ["leadership", "research"],
+    "tags": ["datacamp", "training", "coordination"],
+    "featured": false,
+    "summary": "Administer student data science training through the DataCamp Donates collaboration.",
+    "highlights": [
+      "Supported training delivery for students working through data science learning tracks.",
+      "Monitored group progress and task completion.",
+      "Helped maintain engagement and consistent participation."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
+    "id": "pi-innovations-social-media-designer-2024",
+    "title": "Social Media Designer",
+    "organization": "Pi Innovations",
+    "kind": "work",
+    "location": "Biratnagar, Kosi Zone, Nepal",
+    "start": "2024-05",
+    "end": "2024-08",
+    "audiences": ["design"],
+    "tags": ["social-media", "visual-design", "branding"],
+    "featured": false,
+    "summary": "Produced visual assets for Pi Innovations social channels and campaigns.",
+    "highlights": [
+      "Designed social assets for digital outreach.",
+      "Supported brand consistency across visual outputs.",
+      "Contributed to communication-focused design work."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
+    "id": "students-for-liberty-national-coordinator",
+    "title": "National Coordinator",
+    "organization": "Students For Liberty",
+    "kind": "volunteer",
+    "location": "Nepal",
+    "start": "2023-11",
+    "end": "2024-04",
+    "audiences": ["leadership", "design"],
+    "tags": ["coordination", "social-media", "mentoring", "events"],
+    "featured": false,
+    "summary": "Supported operations in Nepal, helped organize retreats, and mentored local coordinators.",
+    "highlights": [
+      "Assisted national operations and reported to the South Asia Programs Manager.",
+      "Helped organize the Local Coordinator's Retreat 2023/24 in Pokhara.",
+      "Managed SFL Nepal social media and mentored local coordinators."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
+    "id": "cs50x-nepal-instructor",
+    "title": "Instructor",
+    "organization": "CS50x Nepal",
+    "kind": "club",
+    "location": "Dharan, Kosi Zone, Nepal",
+    "start": "2023-11",
+    "end": "2025-04",
+    "audiences": ["engineering", "leadership"],
+    "tags": ["teaching", "python", "sql", "ai"],
+    "featured": false,
+    "summary": "Taught and mentored students across CS50x Nepal learning activities.",
+    "highlights": [
+      "Mentored students in Python, SQL, and introductory AI topics.",
+      "Supported technical learning through workshops and project-based activities.",
+      "Contributed to program delivery as both instructor and organizer."
+    ],
+    "relatedProjectSlugs": ["cs50x-nepal-program-delivery"]
+  },
+  {
+    "id": "cs50x-nepal-production-head",
+    "title": "Production Head",
+    "organization": "CS50x Nepal",
+    "kind": "club",
+    "location": "Dharan, Kosi Zone, Nepal",
+    "start": "2023-11",
+    "end": "2024-04",
+    "audiences": ["design", "engineering"],
+    "tags": ["video-production", "python", "documentation"],
+    "featured": false,
+    "summary": "Produced media assets and classroom documentation for CS50x Nepal.",
+    "highlights": [
+      "Shot and edited testimonial videos of professors, campus leadership, and students.",
+      "Recorded and organized classroom videos in Drive.",
+      "Created Python scripts to watermark images for branding and security."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
+    "id": "pi-innovations-video-editor-chiya-ra-startup",
+    "title": "Video Editor",
+    "organization": "Pi Innovations",
+    "kind": "work",
+    "location": "Biratnagar, Kosi Zone, Nepal",
+    "start": "2024-02",
+    "end": "2024-05",
+    "audiences": ["design"],
+    "tags": ["video-editing", "thumbnails", "short-form"],
+    "featured": false,
+    "summary": "Edited content for the Chiya ra Startup series focused on entrepreneurial stories.",
+    "highlights": [
+      "Handled thumbnail design, video editing, and short-form content creation.",
+      "Worked alongside a production team led by Global Crew Production.",
+      "Contributed to a series celebrating innovation and entrepreneurship."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
+    "id": "robotics-association-nepal-graphic-designer",
+    "title": "Graphic Designer",
+    "organization": "Robotics Association of Nepal",
+    "kind": "work",
+    "location": "Biratnagar, Kosi Zone, Nepal",
+    "start": "2023-12",
+    "end": "2024-01",
+    "audiences": ["design"],
+    "tags": ["event-design", "certificates", "print"],
+    "featured": false,
+    "summary": "Designed visual materials that supported delivery of the Koshi Mini Yantra 2.0 event.",
+    "highlights": [
+      "Created onsite banners for the event.",
+      "Designed certificates and other event resources.",
+      "Worked with the team on event-facing graphical outputs."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
+    "id": "students-for-liberty-local-coordinator",
+    "title": "Local Coordinator",
+    "organization": "Students For Liberty",
+    "kind": "volunteer",
+    "location": "Nepal",
+    "start": "2022-07",
+    "end": "2023-11",
+    "audiences": ["leadership"],
+    "tags": ["events", "coordination", "training"],
+    "featured": false,
+    "summary": "Organized local events and participated in leadership training programs across the SFL network.",
+    "highlights": [
+      "Organized events and reported to national and regional coordinators.",
+      "Attended the Top Leadership Retreat 2023/24 in Kuala Lumpur.",
+      "Participated in the Local Coordinator's Retreat 2022/23 in Pokhara."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
+    "id": "pi-innovations-social-media-designer-2022-2024",
+    "title": "Social Media Designer",
+    "organization": "Pi Innovations",
+    "kind": "work",
+    "location": "Biratnagar, Kosi Zone, Nepal",
+    "start": "2022-09",
+    "end": "2024-02",
+    "audiences": ["design"],
+    "tags": ["social-media", "visual-design", "branding"],
+    "featured": false,
+    "summary": "Created and maintained visual content for Pi Innovations social channels across an extended campaign cycle.",
+    "highlights": [
+      "Designed recurring social media assets.",
+      "Supported brand consistency over multiple campaign cycles.",
+      "Contributed to ongoing communication design work."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
+    "id": "naess-layout-graphic-designer-2023",
+    "title": "Layout Editor and Graphic Designer",
+    "organization": "National Agricultural Engineering Students' Society",
+    "kind": "work",
+    "location": "Dharan",
+    "start": "2023-04",
+    "end": "2023-07",
+    "audiences": ["design"],
+    "tags": ["layout", "publication", "editorial-design"],
+    "featured": false,
+    "summary": "Designed layouts for the 7th volume of Agrineer and supported its readability and visual presentation.",
+    "highlights": [
+      "Designed layouts for the 7th volume of Agrineer.",
+      "Balanced images and text for a cohesive print look.",
+      "Worked with the team to improve readability and overall appeal."
+    ],
+    "relatedProjectSlugs": ["agrineer-volume-7-layout-design"]
+  },
+  {
+    "id": "pi-innovations-instructor",
+    "title": "Instructor",
+    "organization": "Pi Innovations",
+    "kind": "work",
+    "location": "Biratnagar, Kosi Zone, Nepal",
+    "start": "2022-07",
+    "end": "2024-12",
+    "audiences": ["engineering", "leadership"],
+    "tags": ["teaching", "python", "robotics"],
+    "featured": false,
+    "summary": "Delivered hands-on Python and robotics instruction for school students.",
+    "highlights": [
+      "Taught Python and robotics through practical sessions.",
+      "Supported technical skill development for younger learners.",
+      "Contributed to the educational side of Pi Innovations programming."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
+    "id": "pi-innovations-video-editor-videographer",
+    "title": "Video Editor and Videographer",
+    "organization": "Pi Innovations",
+    "kind": "work",
+    "location": "Dharan, Kosi Zone, Nepal",
+    "start": "2022-10",
+    "end": "2022-12",
+    "audiences": ["design"],
+    "tags": ["video-production", "videography", "editing"],
+    "featured": false,
+    "summary": "Produced educational video content for the Sikshyashala series about IT study options.",
+    "highlights": [
+      "Handled thumbnail design, videography, editing, and short creation.",
+      "Worked on content covering BCA, BIT, BCT, BEI, and BSc.CSIT pathways.",
+      "Used creative and technical skills to support student decision-making."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
+    "id": "ecsess-treasurer",
+    "title": "Treasurer",
+    "organization": "Electronics And Communication Engineering Student Society",
+    "kind": "club",
+    "location": "Dharan, Koshi Zone, Nepal",
+    "start": "2022-05",
+    "end": "2023-04",
+    "audiences": ["leadership"],
+    "tags": ["finance", "iot", "training", "events"],
+    "featured": false,
+    "summary": "Managed finances and supported training programs and event operations for the society.",
+    "highlights": [
+      "Oversaw organizational financial transactions.",
+      "Coordinated microcontroller and IoT trainings with committees and campus departments.",
+      "Oversaw financial matters during XTech 2.0."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
+    "id": "code-for-nepal-data-science-fellow",
+    "title": "Data Science Fellow",
+    "organization": "Code for Nepal",
+    "kind": "fellowship",
+    "location": "Nepal",
+    "start": "2021-12",
+    "end": "2022-05",
+    "audiences": ["research", "engineering"],
+    "tags": ["data-science", "analysis", "fellowship"],
+    "featured": false,
+    "summary": "Completed a data science fellowship focused on foundational analytical work.",
+    "highlights": [
+      "Participated in the Code for Nepal data science fellowship.",
+      "Built early experience around analytical and technical problem solving."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
+    "id": "ecsess-executive-committee-member",
+    "title": "Executive Committee Member",
+    "organization": "Electronics And Communication Engineering Student Society",
+    "kind": "club",
+    "location": "Dharan",
+    "start": "2021-05",
+    "end": "2022-04",
+    "audiences": ["leadership"],
+    "tags": ["coordination", "training", "events"],
+    "featured": false,
+    "summary": "Supported society coordination and helped organize technical trainings.",
+    "highlights": [
+      "Coordinated with committee members, departments, and campus offices.",
+      "Helped organize microcontroller training activities."
+    ],
+    "relatedProjectSlugs": []
+  }
+]

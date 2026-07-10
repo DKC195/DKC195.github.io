@@ -1,0 +1,48 @@
+{
+  "name": "Dhiraj KC",
+  "location": "Kathmandu / Dharan, Nepal",
+  "email": "dhirajkc195@gmail.com",
+  "phone": "+9779840174010",
+  "role": "Engineering student building digital systems, communication assets, and operational infrastructure",
+  "intro": "I build and support digital products, communication systems, and operational structures for organizations and technical communities.",
+  "currentFocus": "Production-ready digital work backed by clear communication",
+  "currentStory": "My recent work spans web platforms, event production, social media systems, and technical coordination. This site is designed to show how those threads connect rather than present them as isolated roles.",
+  "contactSectionTitle": "Contact and profile links",
+  "links": [
+    {
+      "label": "Email",
+      "href": "mailto:dhirajkc195@gmail.com",
+      "category": "contact"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/dkc195",
+      "category": "contact"
+    },
+    {
+      "label": "Instagram",
+      "href": "https://placeholder.instagram.link",
+      "category": "contact"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://placeholder.github.link",
+      "category": "social"
+    },
+    {
+      "label": "X",
+      "href": "https://placeholder.x.link",
+      "category": "social"
+    },
+    {
+      "label": "Behance",
+      "href": "https://placeholder.behance.link",
+      "category": "work"
+    },
+    {
+      "label": "DataCamp",
+      "href": "https://placeholder.datacamp.link",
+      "category": "work"
+    }
+  ]
+}

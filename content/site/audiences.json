@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "all",
+    "label": "Public",
+    "shortLabel": "All",
+    "headline": "A portfolio spanning engineering, design, research, and leadership work.",
+    "summary": "A broad view of work across software delivery, design, research support, and coordination."
+  },
+  {
+    "slug": "engineering",
+    "label": "Engineering",
+    "shortLabel": "Developer/Engineering",
+    "headline": "Engineering work grounded in production delivery, systems ownership, and practical implementation.",
+    "summary": "Highlights software platforms, machine learning projects, automation work, and end-to-end technical ownership."
+  },
+  {
+    "slug": "design",
+    "label": "Design",
+    "shortLabel": "Design",
+    "headline": "Design work focused on clarity, brand consistency, and communication across digital and event contexts.",
+    "summary": "Highlights visual systems, editorial layout, campaign content, and execution quality across formats."
+  },
+  {
+    "slug": "research",
+    "label": "Research",
+    "shortLabel": "Research",
+    "headline": "Research-oriented work connecting analysis, synthesis, and clear presentation of technical information.",
+    "summary": "Highlights analytical projects, research support, and work shaped by evidence, structure, and interpretation."
+  },
+  {
+    "slug": "leadership",
+    "label": "Leadership",
+    "shortLabel": "Leadership",
+    "headline": "Leadership work built on coordination, training, execution, and multi-team delivery.",
+    "summary": "Highlights planning, mentoring, operations, and program-level ownership across student, nonprofit, and community contexts."
+  }
+]
