@@ -1,31 +1,15 @@
 "use client";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import type { AudienceDefinition, AudienceSlug } from "@/lib/types";
+import { useAudience } from "@/components/audience-provider";
+import type { AudienceDefinition } from "@/lib/types";
 
 type AudienceSwitcherProps = {
   audiences: AudienceDefinition[];
-  currentAudience: AudienceSlug;
   compact?: boolean;
 };
 
-export function AudienceSwitcher({ audiences, currentAudience, compact = false }: AudienceSwitcherProps) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  function setAudience(nextAudience: AudienceSlug) {
-    const params = new URLSearchParams(searchParams.toString());
-
-    if (nextAudience === "all") {
-      params.delete("audience");
-    } else {
-      params.set("audience", nextAudience);
-    }
-
-    const nextQuery = params.toString();
-    router.push(nextQuery ? `${pathname}?${nextQuery}` : pathname, { scroll: false });
-  }
+export function AudienceSwitcher({ audiences, compact = false }: AudienceSwitcherProps) {
+  const { audience: currentAudience, setAudience } = useAudience();
 
   return (
     <div className="audience-switcher" data-compact={compact} aria-label="Audience filter">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import "@/app/globals.css";
+import { AudienceProvider } from "@/components/audience-provider";
 import { GlobalControls } from "@/components/global-controls";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -83,21 +83,24 @@ export default function RootLayout({
   const audiences = getAudiences();
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t;}catch(e){}})();`
+          }}
+        />
+      </head>
       <body>
         <StructuredData data={structuredData} />
-        <div className="site-shell site-frame">
-          <Suspense fallback={null}>
+        <AudienceProvider>
+          <div className="site-shell site-frame">
             <SiteHeader profile={profile} />
-          </Suspense>
-          {children}
-          <Suspense fallback={null}>
+            {children}
             <SiteFooter profile={profile} />
-          </Suspense>
-        </div>
-        <Suspense fallback={null}>
+          </div>
           <GlobalControls audiences={audiences} />
-        </Suspense>
+        </AudienceProvider>
       </body>
     </html>
   );

@@ -1,13 +1,12 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useAudience } from "@/components/audience-provider";
 import { ProjectCard } from "@/components/project-card";
-import { filterByAudience, getAudienceFromValue } from "@/lib/audience";
+import { filterByAudience } from "@/lib/audience";
 import type { Project } from "@/lib/types";
 
 export function ProjectsPageClient({ projects }: { projects: Project[] }) {
-  const searchParams = useSearchParams();
-  const audience = getAudienceFromValue(searchParams.get("audience"));
+  const { audience } = useAudience();
   const visibleProjects = filterByAudience(projects, audience);
   const otherProjects = audience === "all"
     ? []

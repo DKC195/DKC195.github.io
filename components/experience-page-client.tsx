@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useAudience } from "@/components/audience-provider";
 import { ExperienceTimeline } from "@/components/experience-timeline";
-import { filterByAudience, getAudienceFromValue } from "@/lib/audience";
+import { filterByAudience } from "@/lib/audience";
 import type { ExperienceEntry, Project } from "@/lib/types";
 
 type ExperiencePageClientProps = {
@@ -12,8 +12,7 @@ type ExperiencePageClientProps = {
 };
 
 export function ExperiencePageClient({ entries, projects }: ExperiencePageClientProps) {
-  const searchParams = useSearchParams();
-  const audience = getAudienceFromValue(searchParams.get("audience"));
+  const { audience } = useAudience();
   const visibleEntries = filterByAudience(entries, audience);
   const otherEntries = audience === "all"
     ? []

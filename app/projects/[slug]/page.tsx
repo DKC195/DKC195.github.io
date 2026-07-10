@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
 import { ProjectDetailClient } from "@/components/project-detail-client";
 import { StructuredData } from "@/components/structured-data";
 import { getExperienceEntries, getProfile, getProjectBySlug, getProjects } from "@/lib/content";
@@ -71,9 +70,7 @@ export default async function ProjectDetailPage({
   return (
     <>
       <StructuredData data={structuredData} />
-      <Suspense fallback={null}>
-        <ProjectDetailClient project={project} relatedExperience={relatedExperience} />
-      </Suspense>
+      <ProjectDetailClient project={project} relatedExperience={relatedExperience} />
     </>
   );
 }

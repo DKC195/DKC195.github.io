@@ -1087,6 +1087,18 @@ select {
     grid-column: auto;
   }
 
+  /* Stacked hero: give the portrait a natural portrait ratio so it isn't
+     cropped into a short, nearly-square box. */
+  .profile-art {
+    aspect-ratio: 4 / 5;
+    min-height: 0;
+    max-height: 70vh;
+  }
+
+  .profile-image {
+    object-position: center;
+  }
+
   .project-detail-kpis {
     grid-template-columns: 1fr;
   }

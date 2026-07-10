@@ -1,13 +1,11 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useAudience } from "@/components/audience-provider";
 import { QueryLink } from "@/components/query-link";
-import { getAudienceFromValue } from "@/lib/audience";
 import type { ProfileData } from "@/lib/types";
 
 export function SiteFooter({ profile }: { profile: ProfileData }) {
-  const searchParams = useSearchParams();
-  const audience = getAudienceFromValue(searchParams.get("audience"));
+  const { audience } = useAudience();
   const visibleLinks = profile.links.filter((link) => Boolean(link.href && !link.href.includes("placeholder")));
 
   return (

@@ -76,6 +76,8 @@ Use 2-space indentation in JSON, CSS, and TypeScript. Prefer:
 
 Keep the site GitHub Pages-friendly: preserve static export compatibility and avoid server-only runtime assumptions.
 
+Never call `useSearchParams()`/`usePathname()` in a render path — under static export they blank the page body from the static HTML. Read the active audience from `useAudience()` (`components/audience-provider.tsx`) instead. See `docs/seo.md` (Rendering & crawlability).
+
 ## Testing Guidelines
 There is no dedicated test suite yet. Minimum verification is:
 

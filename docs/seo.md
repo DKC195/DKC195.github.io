@@ -8,7 +8,20 @@ This document records how search-engine and AI/LLM discoverability are handled f
 - Dynamic Open Graph image generation (`next/og` `ImageResponse`) is **not available** under static export. The share image must be a static file.
 - `trailingSlash: true`, so every canonical, sitemap, and internal SEO URL must end in `/` (e.g. `/projects/`).
 - Canonical origin is `https://dhirajkc195.com.np` (matches `public/CNAME`).
-- `app/**/page.tsx` files are server components; UI lives in client components wrapped in `<Suspense>`. Metadata exports must stay in the server page files, never inside `"use client"` components.
+- `app/**/page.tsx` files are server components; metadata exports must stay in them, never inside `"use client"` components.
+
+## Rendering & crawlability (critical)
+Metadata in `<head>` is not enough — the page **body** must render into the static HTML, or non-JS crawlers and most AI bots see an empty shell.
+
+- **Never call `useSearchParams()` / `usePathname()` in a render path.** Under `output: "export"` these force a client-side-rendering bailout (`BAILOUT_TO_CLIENT_SIDE_RENDERING`), stripping the whole subtree — body, header, nav, footer — from the static HTML. This was the original defect.
+- The active audience comes from **`useAudience()`** (`components/audience-provider.tsx`), a client React context, **not** from the URL hook. It initializes to `"all"`, so the server prerender and first client render match (no hydration mismatch) and crawlers get the full unfiltered content. After mount the provider reads `?audience=` from `window.location`, re-filters, and keeps the URL in sync via `history.pushState` (shareable links, working back/forward).
+- Because `filterByAudience(items, "all") === items`, the `"all"` view is just the raw content — fully server-renderable with no hooks.
+- Pages render their client components **directly** (no `<Suspense fallback={null}>` wrapper). Adding such a wrapper around a searchParams reader reintroduces the empty-shell bug.
+- Interactive-only client state (e.g. the experience view toggle, theme) is fine — only the dynamic URL hooks trigger the bailout.
+- **Verify after any change**: `grep -rl BAILOUT_TO_CLIENT_SIDE_RENDERING out/*.html` must return nothing, and `out/index.html` must contain `<main>`, `<header>`, `<nav>`, and real heading text.
+
+### First-paint theme
+`app/layout.tsx` includes a small inline `<head>` script that sets `document.documentElement.dataset.theme` from `localStorage.theme ?? prefers-color-scheme` before paint (avoids FOUC now that bodies render server-side). `<html>` uses `suppressHydrationWarning` because that attribute is set outside React.
 
 ## Single Source of Truth
 `lib/seo.ts` holds shared constants and the metadata builder. Do not duplicate these values elsewhere.

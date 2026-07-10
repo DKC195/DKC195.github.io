@@ -1,17 +1,15 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useAudience } from "@/components/audience-provider";
 import { QueryLink } from "@/components/query-link";
-import { getAudienceFromValue } from "@/lib/audience";
-import type { AudienceSlug, ProfileData } from "@/lib/types";
+import type { ProfileData } from "@/lib/types";
 
 type SiteHeaderProps = {
   profile: ProfileData;
 };
 
 export function SiteHeader({ profile }: SiteHeaderProps) {
-  const searchParams = useSearchParams();
-  const currentAudience: AudienceSlug = getAudienceFromValue(searchParams.get("audience"));
+  const { audience: currentAudience } = useAudience();
 
   return (
     <header className="site-header panel">

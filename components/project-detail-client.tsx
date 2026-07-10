@@ -1,9 +1,8 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useAudience } from "@/components/audience-provider";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { QueryLink } from "@/components/query-link";
-import { getAudienceFromValue } from "@/lib/audience";
 import type { ExperienceEntry, Project, ProjectLink } from "@/lib/types";
 
 type ProjectDetailClientProps = {
@@ -12,8 +11,7 @@ type ProjectDetailClientProps = {
 };
 
 export function ProjectDetailClient({ project, relatedExperience }: ProjectDetailClientProps) {
-  const searchParams = useSearchParams();
-  const audience = getAudienceFromValue(searchParams.get("audience"));
+  const { audience } = useAudience();
   const availableLinks = (project.links ?? []).map((link) => ({
     ...link,
     primary: link.kind === "live" || link.kind === "demo"

@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+import { useAudience } from "@/components/audience-provider";
 import { QueryLink } from "@/components/query-link";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { ProjectCard } from "@/components/project-card";
-import { filterByAudience, getAudienceFromValue } from "@/lib/audience";
+import { filterByAudience } from "@/lib/audience";
 import type { AudienceDefinition, ExperienceEntry, ProfileData, Project } from "@/lib/types";
 
 type HomePageClientProps = {
@@ -30,8 +30,7 @@ export function HomePageClient({
   featuredProjects,
   featuredExperience
 }: HomePageClientProps) {
-  const searchParams = useSearchParams();
-  const audience = getAudienceFromValue(searchParams.get("audience"));
+  const { audience } = useAudience();
   const currentAudience = audiences.find((item) => item.slug === audience) ?? audiences[0];
   const visibleProjects = filterByAudience(featuredProjects, audience);
   const visibleExperience = filterByAudience(featuredExperience, audience).slice(0, 4);

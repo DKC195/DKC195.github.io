@@ -1,15 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { AudienceSwitcher } from "@/components/audience-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { getAudienceFromValue } from "@/lib/audience";
 import type { AudienceDefinition } from "@/lib/types";
 
 export function GlobalControls({ audiences }: { audiences: AudienceDefinition[] }) {
-  const searchParams = useSearchParams();
-  const currentAudience = getAudienceFromValue(searchParams.get("audience"));
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,7 +26,7 @@ export function GlobalControls({ audiences }: { audiences: AudienceDefinition[] 
       </button>
 
       <div className="global-controls-dock" data-open={isOpen}>
-        <AudienceSwitcher audiences={audiences} currentAudience={currentAudience} compact />
+        <AudienceSwitcher audiences={audiences} compact />
         <ThemeToggle compact />
       </div>
     </>

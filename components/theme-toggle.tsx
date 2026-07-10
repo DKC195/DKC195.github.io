@@ -8,8 +8,12 @@ export function ThemeToggle({ compact = false }: { compact?: boolean }) {
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
+    // The inline script in the document head already set data-theme before
+    // first paint (from localStorage or prefers-color-scheme); sync the button
+    // state to it so the label doesn't flash the wrong value.
+    const current = (document.documentElement.dataset.theme as Theme | undefined) ?? "light";
     const saved = window.localStorage.getItem("theme") as Theme | null;
-    const resolved = saved ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const resolved = saved ?? current;
     applyTheme(resolved);
     setTheme(resolved);
   }, []);
