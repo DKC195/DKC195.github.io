@@ -1,4 +1,12 @@
 import { getProfile, getRenderableLinks } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Contact",
+  description:
+    "Get in touch with Dhiraj KC for collaboration, project work, or conversation — email and profile links.",
+  path: "/contact/"
+});
 
 export default function ContactPage() {
   const profile = getProfile();

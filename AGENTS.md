@@ -13,7 +13,7 @@ This repository is a static-export `Next.js` portfolio for `dhirajkc195.com.np`.
 - `public/`: static assets such as profile images and `CNAME`
 - `docs/`: persistent design, architecture, and content-schema decisions
 
-Read `docs/site-decisions.md` and `docs/content-schema.md` before changing structure or UI behavior.
+Read `docs/site-decisions.md` and `docs/content-schema.md` before changing structure or UI behavior. Read `docs/seo.md` before changing metadata, structured data, sitemap/robots, icons, or the deploy pipeline.
 
 ## Build, Test, and Development Commands
 Use the existing npm scripts:
