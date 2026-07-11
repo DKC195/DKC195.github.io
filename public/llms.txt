@@ -1,0 +1,30 @@
+# Dhiraj KC
+
+> A portfolio that brings together technical delivery, design execution, research support, and operational leadership in one clear narrative.
+
+My recent work spans web platforms, event production, social media systems, and technical coordination. This site is designed to show how those threads connect rather than present them as isolated roles.
+
+This `llms.txt` file is generated from the portfolio content files during local development and production builds.
+Detailed markdown mirrors of page content are not currently published on this site, so the links below point to the canonical HTML pages.
+
+## Site
+
+- [Home](https://dhirajkc195.com.np/): I build and support digital products, communication systems, and operational structures for organizations and technical communities.
+- [Projects](https://dhirajkc195.com.np/projects/): Portfolio case studies across engineering, design, research, and leadership work.
+- [Experience](https://dhirajkc195.com.np/experience/): Role history grouped by organization or by role.
+- [Contact](https://dhirajkc195.com.np/contact/): Contact information and profile links.
+
+## Featured Projects
+
+- [Agrineer Volume 8 Layout Design](https://dhirajkc195.com.np/projects/agrineer-layout-design/): Designed the editorial layout for Agrineer Volume 8 with a focus on readability, pacing, and polished print presentation.
+- [Digital Nomad Tax Freedom Index 2025](https://dhirajkc195.com.np/projects/digital-nomad-tax-freedom-index-2025/): Supported comparative research for Liberty International's 2025 digital nomad policy index by compiling tax, visa, and residency indicators across countries.
+- [ICRTAI 2025 Conference Visual and AV Production](https://dhirajkc195.com.np/projects/icrtai-2025-conference-visual-av/): Led visual design and live AV execution for a large hybrid AI conference, supporting stage content, branding materials, and real-time session delivery.
+- [Soccer Match Highlights Event Extraction](https://dhirajkc195.com.np/projects/soccer-match-highlights-event-extraction/): Built a multimodal AI pipeline that detects key match events and generates structured highlight outputs from full-length football videos.
+- [X-Hack 3.0 AI Hackathon](https://dhirajkc195.com.np/projects/x-hack-3-ai-hackathon/): Helped coordinate CS50 AI Inspired X-Hack 3.0, a national hackathon focused on AI-driven business and social innovation.
+- [Youth Activism Nepal (Website)](https://dhirajkc195.com.np/projects/youth-activism-nepal-platform/): Built and maintain a custom web platform while owning hosting, deployment, and the surrounding operational infrastructure.
+- [CS50 AI Nepal Classes and Program](https://dhirajkc195.com.np/projects/cs50x-nepal-program-delivery/): Helped plan and deliver Nepal's first large-scale CS50 AI program, combining technical instruction, curriculum execution, and a structured public-facing learning journey.
+
+## Optional
+
+- [LinkedIn](https://www.linkedin.com/in/dkc195): Verified external profile.
+- [Contact](https://dhirajkc195.com.np/contact/): Contact information and profile links.

@@ -3,12 +3,15 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
+    "predev": "npm run generate:llms",
+    "prebuild": "npm run generate:llms",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "new:project": "node scripts/new-project.mjs"
+    "new:project": "node scripts/new-project.mjs",
+    "generate:llms": "node scripts/generate-llms-txt.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

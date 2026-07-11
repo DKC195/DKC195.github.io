@@ -54,8 +54,16 @@ JSON-LD is how LLMs and rich-result crawlers read the site as entities, not just
 ## Discovery Files
 - `app/sitemap.ts`: static routes + one entry per project from `getProjects()`. Trailing-slash absolute URLs. Emits `out/sitemap.xml`.
 - `app/robots.ts`: allow-all + sitemap reference. Emits `out/robots.txt`.
+- `public/llms.txt`: generated LLM-facing site overview in the current `llmstxt.org` markdown format. Emitted to `out/llms.txt`.
 - Both use `export const dynamic = "force-static"` so they work under static export.
 - When a route is added, confirm it appears in `sitemap.ts` (project routes are automatic; new top-level routes must be added manually).
+
+### `llms.txt` generation
+- Source of truth is existing content, not a separately maintained hand-written file.
+- `scripts/generate-llms-txt.mjs` reads `profile.json`, `home.md`, and project frontmatter to generate `public/llms.txt`.
+- `npm run generate:llms` runs the generator directly.
+- `predev` and `prebuild` run the generator automatically, so local dev and production exports stay current.
+- The current implementation links to canonical HTML pages because the site does not yet publish `.md` mirrors of page content.
 
 ## Icons, Manifest, Share Image
 - `app/icon.png` (512²) and `app/apple-icon.png` (180²) are resized copies of `public/DKC.png` (Next file-based icon convention).
@@ -71,7 +79,7 @@ SEO output only exists after `npm run build` writes it into `out/`. `out/` is gi
 
 ## Verification
 1. `npm run typecheck` and `npm run build`.
-2. Confirm `out/sitemap.xml`, `out/robots.txt`, `out/.nojekyll`, `out/CNAME` exist.
+2. Confirm `out/sitemap.xml`, `out/robots.txt`, `out/llms.txt`, `out/.nojekyll`, `out/CNAME` exist.
 3. Spot-check emitted HTML for unique `<title>`, `<meta name="description">`, `<link rel="canonical">` (trailing slash), and `og:`/`twitter:` tags per page.
 4. Confirm project pages carry `CreativeWork` JSON-LD and the home page carries `Person` + `WebSite`.
 5. After deploy, validate a project URL with Google Rich Results Test and a social-card debugger.
