@@ -24,18 +24,21 @@ npm run dev
 npm run dev -- --hostname 0.0.0.0
 npm run build
 npm run typecheck
+npm run new:project -- --title "Project Title" --slug project-slug
 ```
 
 - `npm run dev`: local development server
 - `npm run dev -- --hostname 0.0.0.0`: test on phone/tablet over local network
 - `npm run build`: required before handoff; validates the static export
 - `npm run typecheck`: TypeScript validation without building
+- `npm run new:project -- --title "Project Title" --slug project-slug`: scaffold a new project markdown file and matching image folder in one step
 
 ## Content Workflow
 Do not hardcode portfolio content in components unless it is true UI chrome.
 
 - Update homepage copy in `content/pages/home.md`
 - Add or edit projects in `content/projects/*.md`
+- Prefer `npm run new:project -- --title "Project Title" --slug project-slug` when creating a new project so the markdown file and image directory stay aligned
 - Add experience entries in `content/experience/entries.json`
 - Update links, role text, and profile metadata in `content/site/profile.json`
 - Update audience labels and summaries in `content/site/audiences.json`
@@ -46,6 +49,7 @@ For promotions in the same organization, keep separate role entries and rely on 
 When converting rough notes, reports, or event summaries into portfolio projects, keep the public case study concise and store long-form source context in the project file for future reuse.
 
 - Use one Markdown file per project in `content/projects/`
+- Create new project files with `npm run new:project -- --title "Project Title" --slug project-slug` so `public/content/projects/<slug>/images/` is created at the same time
 - Keep rendered sections focused on `Overview`, `Execution` or `Role`, and `Outcomes`
 - Store long-form raw notes in a non-rendered frontmatter field such as `archiveContext`
 - Use `archiveContext` for copied reports, planning notes, metric caveats, quote fragments, or future rewrite material

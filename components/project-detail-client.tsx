@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useAudience } from "@/components/audience-provider";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { QueryLink } from "@/components/query-link";
@@ -17,6 +18,44 @@ export function ProjectDetailClient({ project, relatedExperience }: ProjectDetai
     primary: link.kind === "live" || link.kind === "demo"
   }));
   const primaryLinks = availableLinks.filter((link) => link.primary);
+  const gallery = project.gallery ?? [];
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const activeGalleryImage = gallery[activeGalleryIndex];
+
+  useEffect(() => {
+    setActiveGalleryIndex(0);
+  }, [project.slug]);
+
+  useEffect(() => {
+    if (gallery.length < 2) {
+      return;
+    }
+
+    const nextIndex = activeGalleryIndex === gallery.length - 1 ? 0 : activeGalleryIndex + 1;
+    const previousIndex = activeGalleryIndex === 0 ? gallery.length - 1 : activeGalleryIndex - 1;
+
+    [gallery[nextIndex]?.src, gallery[previousIndex]?.src].forEach((src) => {
+      if (!src) {
+        return;
+      }
+
+      const image = new Image();
+      image.src = src;
+      image.decoding = "async";
+    });
+  }, [activeGalleryIndex, gallery]);
+
+  function showPreviousImage() {
+    setActiveGalleryIndex((currentIndex) => (
+      currentIndex === 0 ? gallery.length - 1 : currentIndex - 1
+    ));
+  }
+
+  function showNextImage() {
+    setActiveGalleryIndex((currentIndex) => (
+      currentIndex === gallery.length - 1 ? 0 : currentIndex + 1
+    ));
+  }
 
   return (
     <main className="panel section project-detail-shell">
@@ -64,6 +103,45 @@ export function ProjectDetailClient({ project, relatedExperience }: ProjectDetai
           </div>
         ) : null}
       </div>
+
+      {activeGalleryImage ? (
+        <section className="project-gallery" aria-label="Project image gallery">
+          <figure key={activeGalleryImage.src} className="project-gallery-item">
+            <img
+              src={activeGalleryImage.src}
+              alt={activeGalleryImage.alt}
+              loading="eager"
+              decoding="async"
+              fetchPriority={activeGalleryIndex === 0 ? "high" : "auto"}
+            />
+            {activeGalleryImage.caption ? <figcaption>{activeGalleryImage.caption}</figcaption> : null}
+          </figure>
+
+          {gallery.length > 1 ? (
+            <div className="project-gallery-controls" aria-label="Gallery controls">
+              <button className="project-gallery-button" type="button" onClick={showPreviousImage} aria-label="Show previous image">
+                &lt;
+              </button>
+              <div className="project-gallery-indicator" aria-label={`Image ${activeGalleryIndex + 1} of ${gallery.length}`}>
+                {gallery.map((image, index) => (
+                  <button
+                    key={image.src}
+                    className={index === activeGalleryIndex ? "project-gallery-dot project-gallery-dot-active" : "project-gallery-dot"}
+                    type="button"
+                    onClick={() => setActiveGalleryIndex(index)}
+                    aria-label={`Show image ${index + 1}`}
+                    aria-current={index === activeGalleryIndex ? "true" : undefined}
+                  />
+                ))}
+                <span className="project-gallery-count">{activeGalleryIndex + 1} / {gallery.length}</span>
+              </div>
+              <button className="project-gallery-button" type="button" onClick={showNextImage} aria-label="Show next image">
+                &gt;
+              </button>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
 
       <div className="content-grid project-detail-grid" style={{ marginTop: "1rem" }}>
         <div className="col-7 card project-detail-content">

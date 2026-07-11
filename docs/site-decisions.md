@@ -46,5 +46,7 @@ Avoid patterns that require a server runtime.
 ## Portrait Assets
 - `public/DKC.png`: white-background portrait for light mode
 - `public/DKC_NoBG.jpeg`: no-background portrait for dark mode
+- `public/DKC-home-light.webp`: optimized homepage portrait derived from `DKC.png`
+- `public/DKC-home-dark.webp`: optimized homepage portrait derived from `DKC_NoBG.jpeg`
 
-Portrait switching should preserve the same framing across themes so light/dark changes feel stable.
+The homepage currently uses a single optimized transparent portrait asset so the hero image stays directly discoverable and highly prioritized for LCP.

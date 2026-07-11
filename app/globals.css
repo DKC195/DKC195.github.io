@@ -399,6 +399,37 @@ select {
   margin-bottom: 0.35rem;
 }
 
+.project-card-with-image {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 38%);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.project-card-media {
+  order: 2;
+  min-height: 210px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent),
+    var(--muted);
+}
+
+.project-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card-body {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
 .project-card .section-copy {
   margin-top: 0;
 }
@@ -556,6 +587,119 @@ select {
     color var(--theme-transition);
 }
 
+.project-gallery {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: color-mix(in srgb, var(--card) 94%, transparent);
+}
+
+.project-gallery-item {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+}
+
+.project-gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.project-gallery-item figcaption {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: 1rem;
+  width: fit-content;
+  max-width: min(70ch, calc(100% - 2rem));
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.62);
+  color: #fff;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  backdrop-filter: blur(12px);
+}
+
+.project-gallery-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.project-gallery-button,
+.project-gallery-dot {
+  pointer-events: auto;
+}
+
+.project-gallery-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.62);
+  color: #fff;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+}
+
+.project-gallery-button:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.project-gallery-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(12px);
+}
+
+.project-gallery-dot {
+  width: 0.48rem;
+  height: 0.48rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.38);
+  cursor: pointer;
+}
+
+.project-gallery-dot-active {
+  width: 1.2rem;
+  background: #fff;
+}
+
+.project-gallery-count {
+  margin-left: 0.35rem;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
 .project-reference-link:hover {
   transform: translateY(-1px);
 }
@@ -616,7 +760,7 @@ select {
   position: relative;
   overflow: hidden;
   min-height: 320px;
-  border-radius: 28px;
+  border-radius: 24px;
   background: var(--profile-surface);
   border: 1px solid var(--border);
   transition:
@@ -1173,6 +1317,35 @@ select {
 
   .project-detail-kpis {
     grid-template-columns: 1fr;
+  }
+
+  .project-card-with-image {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-media {
+    order: -1;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-gallery-item figcaption {
+    position: static;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    border: 0;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+    background: color-mix(in srgb, var(--card) 92%, black);
+  }
+
+  .project-gallery-controls {
+    position: static;
+    padding: 0.75rem;
+    border-top: 1px solid var(--border);
+    background: color-mix(in srgb, var(--card) 92%, transparent);
+    transform: none;
   }
 }
 

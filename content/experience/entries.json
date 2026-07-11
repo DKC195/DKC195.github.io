@@ -29,13 +29,13 @@
     "audiences": ["research", "leadership"],
     "tags": ["research", "policy", "analysis", "index"],
     "featured": true,
-    "summary": "Supported analysis and synthesis work for the Digital Nomad Index by compiling and interpreting cross-country policy indicators.",
+    "summary": "Supported comparative research for the Digital Nomad Tax Freedom Index by compiling and interpreting cross-country tax and mobility indicators.",
     "highlights": [
-      "Supported research and data analysis tied to visa policy and mobility indicators.",
-      "Compiled comparative policy information and assisted with research outputs.",
-      "Participated in debates and discussions around the index and related topics."
+      "Supported research and data analysis tied to digital nomad visa policy, tax treatment, and mobility indicators.",
+      "Compiled comparative cross-country policy information used in the Digital Nomad Tax Freedom Index research process.",
+      "Contributed to internal discussion and synthesis work around index findings and related policy questions."
     ],
-    "relatedProjectSlugs": ["agrineer-volume-7-layout-design"]
+    "relatedProjectSlugs": ["digital-nomad-tax-freedom-index-2025"]
   },
   {
     "id": "students-for-liberty-na-social-media-intern",
@@ -54,7 +54,7 @@
       "Used Canva and Affinity to maintain consistent branding across campaign assets.",
       "Supported website design and stronger user-focused digital communication."
     ],
-    "relatedProjectSlugs": ["agrineer-volume-7-layout-design"]
+    "relatedProjectSlugs": []
   },
   {
     "id": "fusemachines-ai-fellowship",
@@ -130,7 +130,7 @@
       "Led the team managing South Asia Students For Liberty social media platforms.",
       "Organized coordinator retreats and delivered training on brand guidelines."
     ],
-    "relatedProjectSlugs": ["datacamp-campus-access-program"]
+    "relatedProjectSlugs": []
   },
   {
     "id": "cs50x-nepal-planning-head",
@@ -149,7 +149,7 @@
       "Organized a hackathon with more than 100 participants and over 20 teams.",
       "Coordinated a closing ceremony attended by more than 2,000 visitors."
     ],
-    "relatedProjectSlugs": ["cs50x-nepal-program-delivery", "x-hack-3-ai-hackathon"]
+    "relatedProjectSlugs": ["cs50x-nepal-program-delivery", "x-hack-3-ai-hackathon", "datacamp-campus-access-program"]
   },
   {
     "id": "ecsess-data-science-fellowship-admin",
@@ -168,7 +168,7 @@
       "Monitored group progress and task completion.",
       "Helped maintain engagement and consistent participation."
     ],
-    "relatedProjectSlugs": []
+    "relatedProjectSlugs": ["datacamp-campus-access-program", "cs50x-nepal-program-delivery", "x-hack-3-ai-hackathon"]
   },
   {
     "id": "pi-innovations-social-media-designer-2024",
@@ -225,7 +225,7 @@
       "Supported technical learning through workshops and project-based activities.",
       "Contributed to program delivery as both instructor and organizer."
     ],
-    "relatedProjectSlugs": ["cs50x-nepal-program-delivery"]
+    "relatedProjectSlugs": ["cs50x-nepal-program-delivery", "datacamp-campus-access-program"]
   },
   {
     "id": "cs50x-nepal-production-head",
@@ -282,7 +282,7 @@
       "Designed certificates and other event resources.",
       "Worked with the team on event-facing graphical outputs."
     ],
-    "relatedProjectSlugs": []
+    "relatedProjectSlugs": ["koshi-mini-yantra-2-event-design"]
   },
   {
     "id": "students-for-liberty-local-coordinator",
@@ -314,13 +314,14 @@
     "audiences": ["design"],
     "tags": ["social-media", "visual-design", "branding"],
     "featured": false,
-    "summary": "Created and maintained visual content for Pi Innovations social channels across an extended campaign cycle.",
+    "summary": "Created and maintained visual content for Pi Innovations social channels and partner-led technology programs across an extended campaign cycle.",
     "highlights": [
       "Designed recurring social media assets.",
       "Supported brand consistency over multiple campaign cycles.",
-      "Contributed to ongoing communication design work."
+      "Contributed to ongoing communication design work.",
+      "Supported event-facing design communication for partner-led programs including Koshi Mini Yantra 2.0."
     ],
-    "relatedProjectSlugs": []
+    "relatedProjectSlugs": ["koshi-mini-yantra-2-event-design"]
   },
   {
     "id": "naess-layout-graphic-designer-2023",

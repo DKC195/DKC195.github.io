@@ -10,6 +10,7 @@ year: 2025
 period: 2025
 relatedExperienceIds:
   - cs50x-nepal-planning-head
+  - ecsess-data-science-fellowship-admin
 sections:
   - overview
   - format

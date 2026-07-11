@@ -29,6 +29,10 @@ links:
     href: https://example.org
     kind: official
     note: Optional scope clarification when the site exists but was not your implementation.
+gallery:
+  - src: /content/projects/project-slug/images/01-cover.webp
+    alt: Short factual description of the image
+    caption: Optional display caption
 archiveContext: |
   Optional long-form source material that should stay in the repo but should not be rendered on the site.
 ---
@@ -39,6 +43,12 @@ Project authoring notes:
 - Use `archiveContext` to preserve reports, event summaries, metric caveats, planning notes, or raw copy for future rewrites.
 - Use `links.kind: official` or `links.kind: reference` when a public site exists but was not your implementation.
 - Use `links.kind: live` when you directly built or shipped the linked website or product.
+- Store project images under `public/content/projects/<project-slug>/images/`.
+- Reference project images from frontmatter using root-relative paths such as `/content/projects/<project-slug>/images/01-cover.jpg`.
+- Prefer resized `webp` files for gallery images unless there is a clear reason to keep another format.
+- The first `gallery` item is treated as the project cover image for cards and as the first image in the project detail gallery.
+- Keep `alt` text factual and concise; use `caption` only when extra visible context helps.
+- To scaffold both the markdown file and image folder at once, run `npm run new:project -- --title "Project Title" --slug project-slug`.
 
 ## Experience
 Store experience in `content/experience/entries.json`.

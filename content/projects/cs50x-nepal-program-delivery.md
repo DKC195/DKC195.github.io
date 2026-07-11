@@ -10,6 +10,8 @@ year: 2024
 period: 2024 - 2025
 relatedExperienceIds:
   - cs50x-nepal-planning-head
+  - cs50x-nepal-instructor
+  - ecsess-data-science-fellowship-admin
 sections:
   - overview
   - program-architecture
@@ -20,6 +22,13 @@ links:
     href: https://cs50xnepal.ioepc.edu.np
     kind: official
     note: The program had its own official web presence. My contribution focused on program planning, delivery, and event execution rather than building the website.
+gallery:
+  - src: /content/projects/cs50x-nepal-program-delivery/images/01-cs50xnepal-cover.webp
+    alt: CS50x Nepal stage banner and audience during a public program event.
+    caption: CS50x Nepal public program event and showcase environment.
+  - src: /content/projects/cs50x-nepal-program-delivery/images/02-cs50xnepal-team-shotby-DKC.webp
+    alt: CS50x Nepal team standing under the CS50 Fair and X-Hack 3.0 entrance banner.
+    caption: Team photo from the CS50 Fair and X-Hack 3.0 event environment.
 archiveContext: |
   Working project framing:
   - CS50 AI program hosted at IOE Purwanchal Campus and coordinated by EXCESS.

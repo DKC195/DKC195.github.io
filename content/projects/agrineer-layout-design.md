@@ -22,6 +22,10 @@ links:
     href: https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/DKC195/The-Agrineer/main/TheAgrineerVol8_2025.pdf
     kind: document
     note: Preview uses a large PDF file and may take time to load.
+gallery:
+  - src: /content/projects/agrineer-layout-design/images/01-AgrineerVol8-cover.webp
+    alt: Cover design for The Agrineer 2025 Volume 8 publication.
+    caption: Final cover used for Agrineer Volume 8.
 ---
 
 ## Overview

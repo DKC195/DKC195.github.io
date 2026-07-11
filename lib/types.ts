@@ -7,6 +7,12 @@ export type ProjectLink = {
   note?: string;
 };
 
+export type ProjectGalleryImage = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
 export type ProjectFrontmatter = {
   title: string;
   slug: string;
@@ -18,6 +24,7 @@ export type ProjectFrontmatter = {
   year?: number;
   period?: string;
   links?: ProjectLink[];
+  gallery?: ProjectGalleryImage[];
   relatedExperienceIds?: string[];
   sections?: string[];
 };

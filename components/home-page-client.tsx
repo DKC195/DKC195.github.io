@@ -60,7 +60,7 @@ export function HomePageClient({
 
         <div className="profile-art">
           <Image
-            src="/DKC.png"
+            src="/DKC-home-light.webp"
             alt="Portrait of Dhiraj KC"
             fill
             sizes="(max-width: 960px) 100vw, 38vw"
@@ -68,7 +68,7 @@ export function HomePageClient({
             priority
           />
           <Image
-            src="/DKC_NoBG.jpeg"
+            src="/DKC-home-dark.webp"
             alt="Portrait of Dhiraj KC"
             fill
             sizes="(max-width: 960px) 100vw, 38vw"

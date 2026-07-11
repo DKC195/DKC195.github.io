@@ -22,6 +22,10 @@ links:
     href: https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/DKC195/The-Agrineer/main/TheAgrineerVol7_2023.pdf
     kind: document
     note: Preview uses a large PDF file and may take time to load.
+gallery:
+  - src: /content/projects/agrineer-volume-7-layout-design/images/01-AgrineerVol7-cover.webp
+    alt: Cover design for The Agrineer 2023 Volume 7 publication.
+    caption: Final cover used for Agrineer Volume 7.
 ---
 
 ## Overview

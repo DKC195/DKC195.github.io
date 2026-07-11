@@ -19,6 +19,10 @@ links:
   - label: Live site
     href: https://youthactivismnepal.org.np
     kind: live
+gallery:
+  - src: /content/projects/youth-activism-nepal-platform/images/01-YAN-Cover.webp
+    alt: Youth Activism Nepal website About page showing the hero section and organization branding.
+    caption: Live site interface for Youth Activism Nepal.
 ---
 
 ## Overview

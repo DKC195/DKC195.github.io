@@ -20,6 +20,16 @@ links:
     href: https://www.icrtai.com
     kind: official
     note: The conference website was managed by the organizing team. My role focused on event visuals, stage content, and live AV delivery.
+gallery:
+  - src: /content/projects/icrtai-2025-conference-visual-av/images/01-ICRTAI-Cover.webp
+    alt: Group photo on the ICRTAI conference stage in front of event branding and display screens.
+    caption: Conference stage environment with speakers, organizers, and event branding.
+  - src: /content/projects/icrtai-2025-conference-visual-av/images/01-ICRTAI-TeamA.webp
+    alt: ICRTAI organizing team and participants posing on stage in front of conference sponsor backdrops.
+    caption: Team photo from the live conference setup.
+  - src: /content/projects/icrtai-2025-conference-visual-av/images/01-ICRTAI-TeamB.webp
+    alt: Smaller ICRTAI team group photo taken indoors during the conference program.
+    caption: Behind-the-scenes team photo from the conference delivery environment.
 archiveContext: |
   Working title: International Conference on Recent Trends in Artificial Intelligence (ICRTAI 2025).
 

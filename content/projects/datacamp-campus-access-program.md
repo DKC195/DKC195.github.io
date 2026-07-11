@@ -10,6 +10,8 @@ year: 2024
 period: 2024 - Present
 relatedExperienceIds:
   - ecsess-data-science-fellowship-admin
+  - cs50x-nepal-planning-head
+  - cs50x-nepal-instructor
 sections:
   - overview
   - role
