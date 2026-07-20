@@ -5,14 +5,14 @@ Static-export Next.js portfolio for `dhirajkc195.com.np`.
 ## Common Commands
 
 ```bash
-npm install
-npm run dev
-npm run build
-npm run typecheck
-npm run new:project -- --title "Project Title" --slug project-slug
+pnpm install
+pnpm dev
+pnpm build
+pnpm typecheck
+pnpm new:project --title "Project Title" --slug project-slug
 ```
 
-`npm run new:project` creates:
+`pnpm new:project` creates:
 
 - `content/projects/<slug>.md`
 - `public/content/projects/<slug>/images/.gitkeep`

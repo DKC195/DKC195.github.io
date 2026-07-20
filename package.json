@@ -2,9 +2,10 @@
   "name": "dhirajkc195-portfolio",
   "private": true,
   "version": "0.1.0",
+  "packageManager": "pnpm@11.15.1",
   "scripts": {
-    "predev": "npm run generate:llms",
-    "prebuild": "npm run generate:llms",
+    "predev": "pnpm run generate:llms",
+    "prebuild": "pnpm run generate:llms",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

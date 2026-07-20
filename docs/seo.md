@@ -61,7 +61,7 @@ JSON-LD is how LLMs and rich-result crawlers read the site as entities, not just
 ### `llms.txt` generation
 - Source of truth is existing content, not a separately maintained hand-written file.
 - `scripts/generate-llms-txt.mjs` reads `profile.json`, `home.md`, and project frontmatter to generate `public/llms.txt`.
-- `npm run generate:llms` runs the generator directly.
+- `pnpm generate:llms` runs the generator directly.
 - `predev` and `prebuild` run the generator automatically, so local dev and production exports stay current.
 - The current implementation links to canonical HTML pages because the site does not yet publish `.md` mirrors of page content.
 
@@ -71,14 +71,14 @@ JSON-LD is how LLMs and rich-result crawlers read the site as entities, not just
 - Share image is `public/DKC_NoBG.jpeg`, referenced via `OG_IMAGE`. It is a portrait, not a 1200×630 card; a branded card can later replace the same path without code changes.
 
 ## Deployment (required for any of the above to reach production)
-SEO output only exists after `npm run build` writes it into `out/`. `out/` is gitignored and must **not** be committed.
+SEO output only exists after `pnpm build` writes it into `out/`. `out/` is gitignored and must **not** be committed.
 - `.github/workflows/deploy.yml` builds the export and publishes `out/` via `actions/deploy-pages` on push to `main`.
-- GitHub Pages **Source** must be set to **"GitHub Actions"** (not the legacy branch builder, which serves raw source and does not run `npm run build`).
+- GitHub Pages **Source** must be set to **"GitHub Actions"** (not the legacy branch builder, which serves raw source and does not run `pnpm build`).
 - `public/.nojekyll` prevents Jekyll from stripping `_next/` assets.
 - `public/CNAME` carries the custom domain into `out/`.
 
 ## Verification
-1. `npm run typecheck` and `npm run build`.
+1. `pnpm typecheck` and `pnpm build`.
 2. Confirm `out/sitemap.xml`, `out/robots.txt`, `out/llms.txt`, `out/.nojekyll`, `out/CNAME` exist.
 3. Spot-check emitted HTML for unique `<title>`, `<meta name="description">`, `<link rel="canonical">` (trailing slash), and `og:`/`twitter:` tags per page.
 4. Confirm project pages carry `CreativeWork` JSON-LD and the home page carries `Person` + `WebSite`.

@@ -48,7 +48,7 @@ Project authoring notes:
 - Prefer resized `webp` files for gallery images unless there is a clear reason to keep another format.
 - The first `gallery` item is treated as the project cover image for cards and as the first image in the project detail gallery.
 - Keep `alt` text factual and concise; use `caption` only when extra visible context helps.
-- To scaffold both the markdown file and image folder at once, run `npm run new:project -- --title "Project Title" --slug project-slug`.
+- To scaffold both the markdown file and image folder at once, run `pnpm new:project --title "Project Title" --slug project-slug`.
 
 ## Experience
 Store experience in `content/experience/entries.json`.
