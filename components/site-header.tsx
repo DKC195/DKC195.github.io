@@ -42,7 +42,7 @@ export function SiteHeader({ profile }: SiteHeaderProps) {
         <QueryLink href="/" audience={currentAudience} className="brand-name" onClick={() => setIsMenuOpen(false)}>
           {profile.name}
         </QueryLink>
-        <span className="site-header-notice">Website is still under development.</span>
+        <span className="site-header-notice">Still becoming — life moves forward, and so does this site.</span>
       </div>
 
       <button
