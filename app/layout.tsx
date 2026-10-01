@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
 import { AudienceProvider } from "@/components/audience-provider";
+import { AnalyticsConsent } from "@/components/analytics-consent";
 import { GlobalControls } from "@/components/global-controls";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -100,6 +101,7 @@ export default function RootLayout({
             <SiteFooter profile={profile} />
           </div>
           <GlobalControls audiences={audiences} />
+          <AnalyticsConsent />
         </AudienceProvider>
       </body>
     </html>

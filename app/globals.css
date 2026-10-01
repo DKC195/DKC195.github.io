@@ -991,6 +991,74 @@ select {
   padding: 1.2rem 1.25rem;
 }
 
+.consent-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(760px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--card) 94%, transparent);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.consent-banner-copy {
+  color: var(--muted-foreground);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.consent-banner-copy p {
+  margin: 0;
+}
+
+.consent-banner-copy a {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.consent-banner-title {
+  margin-bottom: 0.2rem !important;
+  color: var(--foreground);
+  font-weight: 700;
+}
+
+.consent-banner-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.privacy-copy {
+  max-width: 68ch;
+  margin-top: 1.5rem;
+}
+
+.privacy-preferences {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+}
+
+.privacy-preferences p {
+  margin: 0;
+}
+
 .brand-block {
   display: grid;
   gap: 0.1rem;
@@ -1410,5 +1478,14 @@ select {
     width: 100%;
     justify-content: flex-start;
     text-align: left;
+  }
+
+  .consent-banner {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .consent-banner-actions {
+    justify-content: flex-end;
   }
 }
