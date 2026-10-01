@@ -85,8 +85,10 @@ function loadAnalytics() {
   }
 
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer.push(args);
+  // gtag.js only processes `arguments` objects; pushing a plain array (e.g. rest params) is ignored.
+  window.gtag = function gtag() {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer.push(arguments);
   };
   window.gtag("consent", "default", {
     analytics_storage: "denied",
