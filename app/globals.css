@@ -1458,6 +1458,21 @@ select {
     align-items: center;
   }
 
+  /* Let the brand text wrap beside the hamburger instead of pushing it
+     onto its own line. */
+  .site-header .brand-block {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .site-header-notice {
+    font-size: 0.72rem;
+  }
+
+  .nav-toggle {
+    flex-shrink: 0;
+  }
+
   .site-header .nav-row {
     display: none;
     order: 3;
