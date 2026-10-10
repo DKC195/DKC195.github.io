@@ -50,3 +50,9 @@ Avoid patterns that require a server runtime.
 - `public/DKC-home-dark.webp`: optimized homepage portrait derived from `DKC_NoBG.jpeg`
 
 The homepage currently uses a single optimized transparent portrait asset so the hero image stays directly discoverable and highly prioritized for LCP.
+
+## Analytics Consent
+- Google Analytics is loaded by `components/analytics-consent.tsx`
+- The consent banner only appears for visitors whose browser timezone maps to the EU/EEA, UK, or Switzerland; unknown or `UTC`/`Etc/*` zones also get the banner
+- Region detection is timezone-based because the static export has no server-side geo lookup, and a geo-IP API would share the visitor's IP before consent
+- Elsewhere, analytics loads by default; anyone can opt out from `/privacy/`, which always reopens the banner

@@ -15,7 +15,7 @@ export default function PrivacyPage() {
           <p className="eyebrow">Privacy</p>
           <h1 className="section-title">Privacy and analytics</h1>
           <p className="section-copy">
-            This site uses Google Analytics only when you choose to allow analytics cookies.
+            This site uses Google Analytics to understand which pages are useful. You can opt out at any time.
           </p>
         </div>
       </div>
@@ -28,14 +28,16 @@ export default function PrivacyPage() {
 
         <h2>Google Analytics</h2>
         <p>
-          If you accept analytics, Google Analytics helps measure visits, page views, approximate location,
+          When enabled, Google Analytics helps measure visits, page views, approximate location,
           and browser or device information so the site can be improved. The legal basis for this optional
-          processing is your consent. Google may process this information as described in its{" "}
+          processing is your consent where the law requires it. Google may process this information as described in its{" "}
           <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.
         </p>
         <p>
-          Analytics is not loaded before you choose. Rejecting analytics keeps Google Analytics disabled on
-          this site. You can change your choice below. The Analytics property is intended for standard
+          If you appear to be visiting from the EU/EEA, the UK, or Switzerland (based on your device&apos;s
+          time zone), analytics is not loaded until you accept it. Elsewhere, analytics is on by default.
+          Rejecting analytics keeps Google Analytics disabled on this site, and you can change your choice
+          below from any region. The Analytics property is intended for standard
           measurement only; do not send names, email addresses, or other directly identifying information
           through it.
         </p>
@@ -51,7 +53,7 @@ export default function PrivacyPage() {
         <h2>Retention and rights</h2>
         <p>
           Analytics data is retained according to the setting chosen in the Google Analytics property. You
-          may withdraw analytics consent at any time using the control below; withdrawing consent stops
+          may opt out of or withdraw analytics consent at any time using the control below; withdrawing consent stops
           future Analytics collection on this site. You may also contact me with privacy questions or
           requests relating to information associated with this site.
         </p>

@@ -7,39 +7,85 @@ const CONSENT_KEY = "analytics-consent";
 
 type ConsentChoice = "accepted" | "rejected";
 
+// Regions where analytics cookies need prior opt-in consent: EU/EEA (GDPR + ePrivacy),
+// UK (UK GDPR + PECR), and Switzerland. Detected from the browser timezone because the
+// static export has no server-side geo lookup, and a third-party geo-IP call would itself
+// share the visitor's IP before consent. Every `Europe/*` zone counts (deliberately broad).
+const CONSENT_TIMEZONE_PREFIXES = ["Europe/"];
+const CONSENT_TIMEZONES = new Set([
+  // EU/EEA territories outside `Europe/*`
+  "Africa/Ceuta",
+  "America/Cayenne",
+  "America/Guadeloupe",
+  "America/Marigot",
+  "America/Martinique",
+  "America/St_Barthelemy",
+  "Arctic/Longyearbyen",
+  "Asia/Famagusta",
+  "Asia/Nicosia",
+  "Atlantic/Azores",
+  "Atlantic/Canary",
+  "Atlantic/Faeroe",
+  "Atlantic/Faroe",
+  "Atlantic/Madeira",
+  "Atlantic/Reykjavik",
+  "Indian/Mayotte",
+  "Indian/Reunion",
+  // Legacy aliases some browsers still report
+  "CET",
+  "EET",
+  "Eire",
+  "GB",
+  "GB-Eire",
+  "Iceland",
+  "MET",
+  "Poland",
+  "Portugal",
+  "WET"
+]);
+
 declare global {
   interface Window {
     dataLayer: unknown[];
     gtag: (...args: unknown[]) => void;
+    [key: `ga-disable-${string}`]: boolean;
   }
 }
 
 export function AnalyticsConsent() {
-  const [choice, setChoice] = useState<ConsentChoice | null>(null);
+  const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
     const savedChoice = window.localStorage.getItem(CONSENT_KEY) as ConsentChoice | null;
-    setChoice(savedChoice);
 
     if (savedChoice === "accepted") {
       loadAnalytics();
+    } else if (!savedChoice) {
+      if (requiresConsent()) {
+        setShowBanner(true);
+      } else {
+        loadAnalytics();
+      }
     }
 
-    const resetConsent = () => setChoice(null);
+    // Explicit requests from the privacy page always show the banner, in every region.
+    const resetConsent = () => setShowBanner(true);
     window.addEventListener("analytics-consent-reset", resetConsent);
     return () => window.removeEventListener("analytics-consent-reset", resetConsent);
   }, []);
 
   function saveChoice(nextChoice: ConsentChoice) {
     window.localStorage.setItem(CONSENT_KEY, nextChoice);
-    setChoice(nextChoice);
+    setShowBanner(false);
 
     if (nextChoice === "accepted") {
       loadAnalytics();
+    } else {
+      disableAnalytics();
     }
   }
 
-  if (choice) {
+  if (!showBanner) {
     return null;
   }
 
@@ -79,8 +125,35 @@ export function ConsentPreferences() {
   );
 }
 
+function requiresConsent() {
+  let timeZone: string | undefined;
+  try {
+    timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  } catch {
+    return true;
+  }
+
+  // Unknown or generic zones (UTC, Etc/*) can't be placed, so ask to be safe.
+  if (!timeZone || timeZone === "UTC" || timeZone.startsWith("Etc/")) {
+    return true;
+  }
+
+  return (
+    CONSENT_TIMEZONES.has(timeZone) ||
+    CONSENT_TIMEZONE_PREFIXES.some((prefix) => timeZone.startsWith(prefix))
+  );
+}
+
+function disableAnalytics() {
+  window[`ga-disable-${GOOGLE_ANALYTICS_ID}`] = true;
+  window.gtag?.("consent", "update", { analytics_storage: "denied" });
+}
+
 function loadAnalytics() {
+  window[`ga-disable-${GOOGLE_ANALYTICS_ID}`] = false;
+
   if (document.querySelector(`script[data-google-analytics="${GOOGLE_ANALYTICS_ID}"]`)) {
+    window.gtag("consent", "update", { analytics_storage: "granted" });
     return;
   }
 
