@@ -70,6 +70,7 @@ export function SiteHeader({ profile }: SiteHeaderProps) {
         <QueryLink href="/" audience={currentAudience} className="button-ghost">Home</QueryLink>
         <QueryLink href="/projects" audience={currentAudience} className="button-ghost">Portfolio</QueryLink>
         <QueryLink href="/experience" audience={currentAudience} className="button-ghost">Experience</QueryLink>
+        <QueryLink href="/recognition" audience={currentAudience} className="button-ghost">Recognition</QueryLink>
         <QueryLink href="/contact" audience={currentAudience} className="button-ghost">Contact</QueryLink>
       </nav>
     </header>

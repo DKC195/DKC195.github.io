@@ -6,7 +6,8 @@ export const metadata = pageMetadata({
   title: "Experience",
   description:
     "Professional and volunteer experience of Dhiraj KC — roles across engineering, design, research, event production, and technical community work.",
-  path: "/experience/"
+  path: "/experience/",
+  markdownMirror: true
 });
 
 export default function ExperiencePage() {

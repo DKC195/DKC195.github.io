@@ -5,3 +5,12 @@ out
 dist
 .DS_Store
 *.tsbuildinfo
+
+# Generated markdown mirrors (scripts/generate-markdown-mirrors.mjs)
+/public/index.md
+/public/projects.md
+/public/experience.md
+/public/recognition.md
+/public/contact.md
+/public/projects/
+/public/recognition/

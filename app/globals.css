@@ -1360,6 +1360,31 @@ select {
   }
 }
 
+/* Full desktop: the focus and theme controls stay visible as a centered
+   bottom dock, so the settings button isn't needed. */
+@media (min-width: 961px) {
+  .settings-trigger {
+    display: none;
+  }
+
+  .global-controls-dock,
+  .global-controls-dock[data-open="true"] {
+    left: 50%;
+    right: auto;
+    bottom: 1rem;
+    width: max-content;
+    max-width: calc(100vw - 2rem);
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%);
+  }
+
+  /* Keep the end of the page clear of the fixed dock. */
+  .site-frame {
+    padding-bottom: 7rem;
+  }
+}
+
 @media (max-width: 960px) {
   .hero-grid,
   .content-grid {
@@ -1503,4 +1528,25 @@ select {
   .consent-banner-actions {
     justify-content: flex-end;
   }
+}
+
+/* Official App Store badge: keep Apple's artwork unmodified, at least 40px
+   tall on screen, with clear space of a quarter of its height (11px) around it. */
+.app-store-badge {
+  display: inline-flex;
+  align-items: center;
+  margin: 11px;
+  border-radius: 8px;
+  line-height: 0;
+}
+
+.app-store-badge img {
+  height: 44px;
+  width: auto;
+}
+
+/* The badge always sits at the right end of its row of actions. */
+.actions-row .app-store-badge {
+  order: 99;
+  margin-left: auto;
 }

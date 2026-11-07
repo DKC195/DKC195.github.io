@@ -19,6 +19,7 @@ export function SiteFooter({ profile }: { profile: ProfileData }) {
         <QueryLink href="/" audience={audience} className="button-ghost">Home</QueryLink>
         <QueryLink href="/projects" audience={audience} className="button-ghost">Portfolio</QueryLink>
         <QueryLink href="/experience" audience={audience} className="button-ghost">Experience</QueryLink>
+        <QueryLink href="/recognition" audience={audience} className="button-ghost">Recognition</QueryLink>
         <QueryLink href="/contact" audience={audience} className="button-ghost">Contact</QueryLink>
         <QueryLink href="/privacy" audience={audience} className="button-ghost">Privacy</QueryLink>
       </div>

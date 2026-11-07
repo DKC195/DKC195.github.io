@@ -17,7 +17,14 @@ type PageMetadataInput = {
   path: string;
   keywords?: string[];
   ogType?: "website" | "article";
+  /** Advertise the `.md` copy written by scripts/generate-markdown-mirrors.mjs. */
+  markdownMirror?: boolean;
 };
+
+/** Maps a route path to its Markdown mirror: "/" -> "/index.md", "/projects/x/" -> "/projects/x.md". */
+export function markdownMirrorPath(path: string) {
+  return path === "/" ? "/index.md" : `${path.replace(/\/$/, "")}.md`;
+}
 
 /**
  * Builds a consistent per-page Metadata object: canonical URL (trailing-slash
@@ -29,7 +36,8 @@ export function pageMetadata({
   description,
   path,
   keywords,
-  ogType = "website"
+  ogType = "website",
+  markdownMirror = false
 }: PageMetadataInput): Metadata {
   return {
     // Only set `title` when provided so the layout's default title (and the
@@ -38,7 +46,10 @@ export function pageMetadata({
     ...(title ? { title } : {}),
     description,
     keywords,
-    alternates: { canonical: path },
+    alternates: {
+      canonical: path,
+      ...(markdownMirror ? { types: { "text/markdown": markdownMirrorPath(path) } } : {})
+    },
     openGraph: {
       type: ogType,
       url: path,

@@ -43,6 +43,7 @@ Project authoring notes:
 - Use `archiveContext` to preserve reports, event summaries, metric caveats, planning notes, or raw copy for future rewrites.
 - Use `links.kind: official` or `links.kind: reference` when a public site exists but was not your implementation.
 - Use `links.kind: live` when you directly built or shipped the linked website or product.
+- Use `links.kind: app-store` for App Store links. They render as Apple's official "Download on the App Store" badge (`components/app-store-badge.tsx`, artwork in `public/badges/app-store-black.svg`, from developer.apple.com/app-store/marketing/guidelines/; Apple prefers the black badge in every theme and forbids modifying it). Use a campaign link with `pt` and `ct` so App Store Connect can attribute visits to this site.
 - Store project images under `public/content/projects/<project-slug>/images/`.
 - Reference project images from frontmatter using root-relative paths such as `/content/projects/<project-slug>/images/01-cover.jpg`.
 - Prefer resized `webp` files for gallery images unless there is a clear reason to keep another format.
@@ -78,6 +79,39 @@ Rules:
 - Do not merge multiple promotions into one record
 - Use `end: null` for current roles
 - Keep `audiences` aligned with the site filter options
+
+## Recognition
+Store awards, honors, and selections in `content/recognition/*.md`, one file per item. Each one gets a card on `/recognition/`, its own page at `/recognition/<slug>/`, and a sidebar card on each related project page. Add an optional `image` (`src`, `alt`, `caption`) for a certificate or event photo; it becomes the card and page image.
+
+```md
+---
+title: National Winner
+event: Code for Impact 2026
+slug: code-for-impact-2026
+issuer: U.S. Embassy Nepal × Aadyanta Advisory
+date: 2026-07
+summary: One sentence on what was won and against what field.
+role: Lead Engineer, team Neptou
+audiences: [engineering, leadership]
+relatedProjectSlugs: [neptou]
+relatedExperienceIds: [neptou-head-of-technology]
+links:
+  - label: Program page
+    href: https://example.org
+    kind: official
+    note: Scope note when you did not build the site.
+  - label: News coverage
+    href: https://example.com/article
+    kind: reference
+archiveContext: |
+  Source notes, quotes, and caveats. Not rendered.
+---
+```
+
+Rules:
+- A competition or program win is recognition, not a project. Link it to the project it came from with `relatedProjectSlugs`.
+- Use the wording that sources support (for example "National Winner" rather than an unofficial title), and link the sources.
+- `date` is `YYYY-MM`; entries sort newest first.
 
 ## Profile Metadata
 Store profile metadata in `content/site/profile.json`.

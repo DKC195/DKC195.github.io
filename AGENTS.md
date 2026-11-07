@@ -3,11 +3,12 @@
 ## Project Structure & Module Organization
 This repository is a static-export `Next.js` portfolio for `dhirajkc195.com.np`.
 
-- `app/`: App Router pages for `Home`, `Projects`, `Experience`, and `Contact`
+- `app/`: App Router pages for `Home`, `Projects`, `Experience`, `Recognition`, and `Contact`
 - `components/`: UI components and client-side interaction controls
 - `content/pages/`: editable Markdown page content
 - `content/projects/`: one Markdown file per project/case study
 - `content/experience/entries.json`: structured experience data
+- `content/recognition/`: one Markdown file per award, honor, or selection
 - `content/site/`: profile metadata and audience labels
 - `lib/`: content loaders, shared types, and audience helpers
 - `public/`: static assets such as profile images and `CNAME`
@@ -40,6 +41,7 @@ Do not hardcode portfolio content in components unless it is true UI chrome.
 - Add or edit projects in `content/projects/*.md`
 - Prefer `pnpm new:project --title "Project Title" --slug project-slug` when creating a new project so the markdown file and image directory stay aligned
 - Add experience entries in `content/experience/entries.json`
+- Add awards and honors in `content/recognition/*.md`, linked to their project, instead of creating a project for them
 - Update links, role text, and profile metadata in `content/site/profile.json`
 - Update audience labels and summaries in `content/site/audiences.json`
 

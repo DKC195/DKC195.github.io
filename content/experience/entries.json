@@ -1,5 +1,44 @@
 [
   {
+    "id": "neptou-head-of-technology",
+    "title": "Head of Technology",
+    "organization": "Neptou",
+    "kind": "work",
+    "location": "Nepal",
+    "start": "2025-04",
+    "end": null,
+    "audiences": ["engineering", "leadership"],
+    "tags": ["swift", "swiftui", "fastapi", "postgresql", "nextjs", "llm", "android", "startup"],
+    "featured": true,
+    "summary": "Lead the technology for Neptou, an early-stage travel companion startup for Nepal, across iOS, backend, web, and Android.",
+    "highlights": [
+      "Built the offline-first SwiftUI iOS app, including an on-device trip planner, and ship it to the App Store through Xcode Cloud.",
+      "Built the FastAPI and Postgres backend with a versioned API, Claude-powered planning endpoints, and a role-based admin API.",
+      "Built the Next.js website and staff admin panel, and am porting the app to Android with AI-assisted development.",
+      "Led engineering for Neptou, one of four national winners of Code for Impact 2026 out of 190 applicant teams."
+    ],
+    "relatedProjectSlugs": ["neptou"]
+  },
+  {
+    "id": "liberty-international-research-editorial-support",
+    "title": "Research, Editorial and Project Support",
+    "organization": "Liberty International",
+    "kind": "work",
+    "location": "Remote",
+    "start": "2026-09",
+    "end": null,
+    "audiences": ["research", "leadership"],
+    "tags": ["research", "editorial", "source-verification", "content-development", "project-support"],
+    "featured": false,
+    "summary": "Support Liberty International's Research Department with research, editorial review, content development, and project coordination.",
+    "highlights": [
+      "Conduct research, data collection, and source verification for Research Department projects.",
+      "Provide editorial support by reviewing and proofreading manuscripts, documents, and references.",
+      "Help develop written and digital content for research projects and communication channels, including social media."
+    ],
+    "relatedProjectSlugs": []
+  },
+  {
     "id": "yan-digital-systems-officer",
     "title": "Digital Systems Officer",
     "organization": "Youth Activism Nepal",

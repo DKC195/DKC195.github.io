@@ -5,7 +5,8 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   description:
     "Portfolio of Dhiraj KC spanning engineering, design, research, and leadership work — digital products, communication systems, and operational infrastructure.",
-  path: "/"
+  path: "/",
+  markdownMirror: true
 });
 
 export default function HomePage() {

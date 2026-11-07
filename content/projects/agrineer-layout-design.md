@@ -7,7 +7,7 @@ tags: [Editorial Design, Layout, Print, Publication]
 status: completed
 featured: true
 year: 2026
-period: 2026
+period: Apr 2026 - Jun 2026
 relatedExperienceIds:
   - naess-layout-graphic-designer-2026
 sections:

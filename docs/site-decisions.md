@@ -17,6 +17,7 @@ Avoid patterns that require a server runtime.
 - `content/experience/entries.json`: full experience dataset
 - `content/site/profile.json`: profile metadata, links, role text
 - `content/site/audiences.json`: audience labels and summaries
+- `content/recognition/*.md`: awards and honors, each linked to its project
 
 ## Audience and Navigation Behavior
 - Audience filtering uses the `audience` query string
@@ -32,9 +33,8 @@ Avoid patterns that require a server runtime.
 - Overlapping roles in the same organization should still remain separate
 
 ## Control Pattern
-- Theme and audience controls live behind a floating settings button
-- Desktop and mobile use the same interaction model
-- The settings button should align to the content width on desktop
+- Full desktop (wider than 960px): theme and audience controls are always visible in a dock centered at the bottom of the viewport; there is no settings button
+- Tablet and mobile (960px and below): the same controls live behind a floating round settings button
 - The mobile settings panel may be wider than the button, but the button remains round
 
 ## Visual Direction

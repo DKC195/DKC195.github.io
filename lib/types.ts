@@ -3,7 +3,7 @@ export type AudienceSlug = "all" | "engineering" | "design" | "research" | "lead
 export type ProjectLink = {
   label: string;
   href: string;
-  kind: "official" | "reference" | "live" | "github" | "demo" | "document";
+  kind: "official" | "reference" | "live" | "app-store" | "github" | "demo" | "document";
   note?: string;
 };
 
@@ -30,6 +30,27 @@ export type ProjectFrontmatter = {
 };
 
 export type Project = ProjectFrontmatter & {
+  content: string;
+};
+
+export type RecognitionFrontmatter = {
+  title: string;
+  event: string;
+  slug: string;
+  issuer: string;
+  /** "YYYY-MM" */
+  date: string;
+  summary: string;
+  role?: string;
+  audiences: AudienceSlug[];
+  /** Optional card and detail-page image, e.g. a certificate or event photo. */
+  image?: ProjectGalleryImage;
+  links?: ProjectLink[];
+  relatedProjectSlugs?: string[];
+  relatedExperienceIds?: string[];
+};
+
+export type Recognition = RecognitionFrontmatter & {
   content: string;
 };
 

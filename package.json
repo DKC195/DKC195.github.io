@@ -4,15 +4,16 @@
   "version": "0.1.0",
   "packageManager": "pnpm@11.15.1",
   "scripts": {
-    "predev": "pnpm run generate:llms",
-    "prebuild": "pnpm run generate:llms",
+    "predev": "pnpm run generate:llms && pnpm run generate:markdown",
+    "prebuild": "pnpm run generate:llms && pnpm run generate:markdown",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "new:project": "node scripts/new-project.mjs",
-    "generate:llms": "node scripts/generate-llms-txt.mjs"
+    "generate:llms": "node scripts/generate-llms-txt.mjs",
+    "generate:markdown": "node scripts/generate-markdown-mirrors.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

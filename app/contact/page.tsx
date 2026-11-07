@@ -5,7 +5,8 @@ export const metadata = pageMetadata({
   title: "Contact",
   description:
     "Get in touch with Dhiraj KC for collaboration, project work, or conversation — email and profile links.",
-  path: "/contact/"
+  path: "/contact/",
+  markdownMirror: true
 });
 
 export default function ContactPage() {

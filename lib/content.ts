@@ -9,7 +9,9 @@ import type {
   ExperienceEntry,
   ProfileData,
   Project,
-  ProjectFrontmatter
+  ProjectFrontmatter,
+  Recognition,
+  RecognitionFrontmatter
 } from "@/lib/types";
 
 const rootDir = process.cwd();
@@ -61,7 +63,13 @@ export function getProjects(): Project[] {
         content: marked.parse(parsed.content) as string
       };
     })
-    .sort((left, right) => (right.year ?? 0) - (left.year ?? 0));
+    .sort(compareProjects);
+}
+
+// Ongoing work first, then newest year first.
+function compareProjects(left: ProjectFrontmatter, right: ProjectFrontmatter) {
+  const ongoing = Number(right.status === "ongoing") - Number(left.status === "ongoing");
+  return ongoing || (right.year ?? 0) - (left.year ?? 0);
 }
 
 export function getProjectBySlug(slug: string) {
@@ -73,6 +81,30 @@ export function getFeaturedProjects(audience: AudienceSlug) {
     getProjects().filter((project) => project.featured),
     audience
   );
+}
+
+export function getRecognition(): Recognition[] {
+  const recognitionDir = path.join(rootDir, "content/recognition");
+
+  return fs
+    .readdirSync(recognitionDir)
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => {
+      const parsed = matter(fs.readFileSync(path.join(recognitionDir, file), "utf8"));
+      // gray-matter parses an unquoted 2026-07 as a string, but normalize in case it becomes a Date.
+      const frontmatter = parsed.data as RecognitionFrontmatter;
+
+      return {
+        ...frontmatter,
+        date: String(frontmatter.date),
+        content: marked.parse(parsed.content) as string
+      };
+    })
+    .sort((left, right) => right.date.localeCompare(left.date));
+}
+
+export function getRecognitionBySlug(slug: string) {
+  return getRecognition().find((item) => item.slug === slug);
 }
 
 export function getExperienceEntries() {

@@ -2,20 +2,23 @@
 
 import { useEffect, useState } from "react";
 import { useAudience } from "@/components/audience-provider";
+import { AppStoreBadge } from "@/components/app-store-badge";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { QueryLink } from "@/components/query-link";
-import type { ExperienceEntry, Project, ProjectLink } from "@/lib/types";
+import { formatRecognitionDate } from "@/lib/recognition";
+import type { ExperienceEntry, Project, ProjectLink, Recognition } from "@/lib/types";
 
 type ProjectDetailClientProps = {
   project: Project;
   relatedExperience: ExperienceEntry[];
+  recognition: Recognition[];
 };
 
-export function ProjectDetailClient({ project, relatedExperience }: ProjectDetailClientProps) {
+export function ProjectDetailClient({ project, relatedExperience, recognition }: ProjectDetailClientProps) {
   const { audience } = useAudience();
   const availableLinks = (project.links ?? []).map((link) => ({
     ...link,
-    primary: link.kind === "live" || link.kind === "demo"
+    primary: link.kind === "app-store" || link.kind === "live" || link.kind === "demo"
   }));
   const primaryLinks = availableLinks.filter((link) => link.primary);
   const gallery = project.gallery ?? [];
@@ -89,7 +92,9 @@ export function ProjectDetailClient({ project, relatedExperience }: ProjectDetai
         </div>
         {primaryLinks.length > 0 ? (
           <div className="actions-row project-detail-actions">
-            {primaryLinks.map((link) => (
+            {primaryLinks.map((link) => link.kind === "app-store" ? (
+              <AppStoreBadge key={`${link.kind}-${link.href}`} href={link.href} appName={project.title} />
+            ) : (
               <a
                 key={`${link.kind}-${link.href}`}
                 href={link.href}
@@ -177,6 +182,21 @@ export function ProjectDetailClient({ project, relatedExperience }: ProjectDetai
             </div>
           </article>
 
+          {recognition.length > 0 ? (
+            <article className="card project-detail-card">
+              <p className="eyebrow">Recognition</p>
+              <h3 className="project-detail-card-title">Awards and honors</h3>
+              <div className="project-related-role-list">
+                {recognition.map((item) => (
+                  <QueryLink key={item.slug} href={`/recognition/${item.slug}`} audience={audience} className="project-related-role">
+                    <span className="project-related-role-title">{item.title} · {item.event}</span>
+                    <span className="project-related-role-org">{formatRecognitionDate(item.date)} · {item.issuer}</span>
+                  </QueryLink>
+                ))}
+              </div>
+            </article>
+          ) : null}
+
           {availableLinks.length > 0 ? (
             <article className="card project-detail-card">
               <p className="eyebrow">Project links</p>
@@ -211,7 +231,7 @@ export function ProjectDetailClient({ project, relatedExperience }: ProjectDetai
   );
 }
 
-function ProjectReferenceLink({ link }: { link: ProjectLink & { primary: boolean } }) {
+export function ProjectReferenceLink({ link }: { link: ProjectLink }) {
   return (
     <a href={link.href} className="project-reference-link" target="_blank" rel="noreferrer">
       <span className="project-reference-link-row">
@@ -231,6 +251,8 @@ function formatLinkKind(kind: ProjectLink["kind"]) {
       return "Reference";
     case "live":
       return "Live";
+    case "app-store":
+      return "App Store";
     case "github":
       return "GitHub";
     case "demo":

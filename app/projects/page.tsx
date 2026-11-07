@@ -6,7 +6,8 @@ export const metadata = pageMetadata({
   title: "Projects",
   description:
     "Case studies, product work, and technical experiments by Dhiraj KC across engineering, design, research, and leadership.",
-  path: "/projects/"
+  path: "/projects/",
+  markdownMirror: true
 });
 
 export default function ProjectsPage() {

@@ -63,7 +63,13 @@ JSON-LD is how LLMs and rich-result crawlers read the site as entities, not just
 - `scripts/generate-llms-txt.mjs` reads `profile.json`, `home.md`, and project frontmatter to generate `public/llms.txt`.
 - `pnpm generate:llms` runs the generator directly.
 - `predev` and `prebuild` run the generator automatically, so local dev and production exports stay current.
-- The current implementation links to canonical HTML pages because the site does not yet publish `.md` mirrors of page content.
+- Links in `llms.txt` point to the Markdown mirrors below.
+
+### Markdown mirrors
+- Every content page is also published as Markdown by appending `.md` to its path: `/index.md`, `/projects.md`, `/projects/<slug>.md`, `/experience.md`, `/recognition.md`, `/recognition/<slug>.md`, `/contact.md`.
+- `scripts/generate-markdown-mirrors.mjs` (`pnpm generate:markdown`, also run by `predev`/`prebuild`) writes them into `public/`. The outputs are gitignored; do not hand-edit them.
+- Mirrors are built from the same content files and never include `archiveContext`.
+- Pages opt in with `markdownMirror: true` in `pageMetadata`, which emits `<link rel="alternate" type="text/markdown">`. When adding a new top-level page, add both a renderer in the script and the flag.
 
 ## Icons, Manifest, Share Image
 - `app/icon.png` (512²) and `app/apple-icon.png` (180²) are resized copies of `public/DKC.png` (Next file-based icon convention).
@@ -79,7 +85,7 @@ SEO output only exists after `pnpm build` writes it into `out/`. `out/` is gitig
 
 ## Verification
 1. `pnpm typecheck` and `pnpm build`.
-2. Confirm `out/sitemap.xml`, `out/robots.txt`, `out/llms.txt`, `out/.nojekyll`, `out/CNAME` exist.
+2. Confirm `out/sitemap.xml`, `out/robots.txt`, `out/llms.txt`, `out/.nojekyll`, `out/CNAME`, and the `.md` mirrors (`out/index.md`, `out/projects/<slug>.md`) exist.
 3. Spot-check emitted HTML for unique `<title>`, `<meta name="description">`, `<link rel="canonical">` (trailing slash), and `og:`/`twitter:` tags per page.
 4. Confirm project pages carry `CreativeWork` JSON-LD and the home page carries `Person` + `WebSite`.
 5. After deploy, validate a project URL with Google Rich Results Test and a social-card debugger.

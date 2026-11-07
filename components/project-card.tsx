@@ -1,3 +1,4 @@
+import { AppStoreBadge } from "@/components/app-store-badge";
 import { QueryLink } from "@/components/query-link";
 import type { AudienceSlug, Project, ProjectLink } from "@/lib/types";
 
@@ -31,7 +32,9 @@ export function ProjectCard({ project, audience }: { project: Project; audience?
           <QueryLink href={`/projects/${project.slug}`} audience={audience} className="button">
             View case study
           </QueryLink>
-          {prioritizedLinks.map((link) => (
+          {prioritizedLinks.map((link) => link.kind === "app-store" ? (
+            <AppStoreBadge key={`${link.kind}-${link.href}`} href={link.href} appName={project.title} />
+          ) : (
             <a key={`${link.kind}-${link.href}`} href={link.href} className="button-ghost" target="_blank" rel="noreferrer">
               {link.label}
             </a>
@@ -44,6 +47,8 @@ export function ProjectCard({ project, audience }: { project: Project; audience?
 
 function getProjectCardLinkPriority(kind: ProjectLink["kind"]) {
   switch (kind) {
+    case "app-store":
+      return 0;
     case "live":
       return 1;
     case "demo":
